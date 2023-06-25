@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block title_head %}
-<title>Inicio</title>
+<title>Registro de equipo</title>
 {% endblock title_head %}
 
 {% block h1_header %}
-Bienvenidos
+Censo de equipos
 {% endblock h1_header %}
 
 {% block contenido %}
-<p>
-    Esta es la pagina
-</p>
+
+<table>{{formulario}}</table>
+<form action ="" method="post">
+    <button>Registra tus datos</button>
+</form>
+
+
 {% endblock contenido %}
