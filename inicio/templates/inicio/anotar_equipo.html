@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Registro de equipo</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Censo de equipos
+{% endblock h1_header %}
+
+{% block contenido %}
+
+<p>{{'Ingresa de que equipo sos hincha, ciudad y edad para registrarte'}}</p>
+{% csrf_token %}
+<table>{{formulario}}</table>
+<form action ="" method="post">
+    <button>Registra tus datos</button>
+</form>
+
+
+{% endblock contenido %}
