@@ -10,6 +10,8 @@ Censo de equipos
 
 {% block contenido %}
 
+<p>{{'Ingresa de que equipo sos hincha, ciudad y edad para registrarte'}}</p>
+{% csrf_token %}
 <table>{{formulario}}</table>
 <form action ="" method="post">
     <button>Registra tus datos</button>
