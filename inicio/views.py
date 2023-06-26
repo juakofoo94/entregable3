@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from inicio.forms import AnotarEquipoForm
+from inicio.forms import AnotarEquipoForm, BuscarEquipoForm
 from inicio.models import EquipoFutbol
 
 
@@ -24,3 +24,12 @@ def anotar_equipo(request):
     
     formulario = AnotarEquipoForm()
     return render(request, 'inicio/anotar_equipo.html', {'formulario': formulario, 'mensaje': mensaje})
+
+def listar_equipos(request):
+    formulario = BuscarEquipoForm(request.GET)
+    if formulario.is_valid():
+        equipo_a_buscar = formulario.cleaned_data['equipo']
+        listado_de_equipos = EquipoFutbol.objects.filter(equipo__icontains=equipo_a_buscar)
+    
+      
+    return render(request, 'inicio/listar_equipos.html', {'formulario': formulario, 'equipos': listado_de_equipos})

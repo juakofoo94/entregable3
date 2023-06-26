@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Listado de equipos</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Lista de equipos
+{% endblock h1_header %}
+
+{% block contenido %}
+
+<form action = "" method = "get">
+    {{formulario}}
+    <button>Buscar equipos</button>
+</form>
+
+{% for equipo in equipos %}
+<li>Equipo: {{equipo.equipo}} - Ciudad: {{equipo.ciudad}}</li>
+
+{% endfor %}
+
+{% endblock contenido %}
