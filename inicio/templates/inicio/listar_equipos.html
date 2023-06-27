@@ -15,9 +15,14 @@ Lista de equipos
     <button>Buscar equipos</button>
 </form>
 
+{% if equipos %}
+
 {% for equipo in equipos %}
-<li>Equipo: {{equipo.equipo}} - Ciudad: {{equipo.ciudad}}</li>
+<li>Equipo: {{equipo.equipo}} - Ciudad: {{equipo.ciudad}}
+    <a href={%url 'inicio: modificar_equipo' equipo.id %}>Modificar</a>
+</li>
 
 {% endfor %}
+{% endif %}
 
 {% endblock contenido %}

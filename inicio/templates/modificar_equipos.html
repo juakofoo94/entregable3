@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Modificar</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Modificar datos
+{% endblock h1_header %}
+
+{% block contenido %}
+
+{% csrf_token %}
+<table>{{formulario}}</table>
+<form action ="" method="post">
+    <button>Modificar</button>
+</form>
+
+
+{% endblock contenido %}
