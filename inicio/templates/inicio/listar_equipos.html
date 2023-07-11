@@ -19,7 +19,7 @@ Lista de equipos
 
 {% for equipo in equipos %}
 <li>Equipo: {{equipo.equipo}} - Ciudad: {{equipo.ciudad}}
-    <a href={%url 'inicio: modificar_equipo' equipo.id %}>Modificar</a>
+    <a href={%url 'inicio: modificar_equipos' equipo.id %}>Modificar</a>
 </li>
 
 {% endfor %}

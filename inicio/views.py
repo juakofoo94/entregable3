@@ -14,7 +14,7 @@ def anotar_equipo(request):
         formulario = AnotarEquipoForm(request.POST)
         if formulario.is_valid():
             info = formulario.cleaned_data
-            equipo = EquipoFutbol(nombre=info['nombre'], ciudad=info['ciudad'], edad=info['edad'])
+            equipo = EquipoFutbol(equipo=info['equipo'], ciudad=info['ciudad'], edad=info['edad'])
             equipo.save()    
             mensaje = 'Tus datos se registraron correctamente'
         
@@ -35,7 +35,7 @@ def listar_equipos(request):
     return render(request, 'inicio/listar_equipos.html', {'formulario': formulario, 'equipos': listado_de_equipos})
 
 
-def modificar_equipo(request, equipo_id):
+def modificar_equipos(request, equipo_id):
     equipo_a_modificar = EquipoFutbol.objects.get(id=equipo_id) 
     
     if request.method == 'POST':
@@ -51,6 +51,6 @@ def modificar_equipo(request, equipo_id):
             return render ('inicio/modificar_equipos.html', {'formulario': formulario})  
     
                 
-    formulario = ModificarEquipoForm(initial={'nombre': equipo_a_modificar.equipo, 'ciudad': equipo_a_modificar.ciudad, 'edad': equipo_a_modificar.ciudad})
+    formulario = ModificarEquipoForm(initial={'equipo': equipo_a_modificar.equipo, 'ciudad': equipo_a_modificar.ciudad, 'edad': equipo_a_modificar.edad})
     return render ('inicio/modificar_equipos.html', {'formulario': formulario})  
     

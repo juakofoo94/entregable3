@@ -10,10 +10,9 @@ Modificar datos
 
 {% block contenido %}
 
-
-<table>{{formulario}}</table>
 <form action ="" method="post">
     {% csrf_token %}
+    <table>{{formulario}}</table>
     <button>Modificar</button>
 </form>
 
